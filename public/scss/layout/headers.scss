@@ -1,7 +1,3 @@
-@import '../utility/broccoli_style.scss';
-
-// costumeized code starts here
-
 @mixin header_template($position, $color){
     position: $position;
     display: flex;

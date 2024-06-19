@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom fonts for this template-->
     <!-- broccoli style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('scss/scss_convert/headers.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('scss_convert/broccoli_style.css') }}">
 </head>
 
 <body>
