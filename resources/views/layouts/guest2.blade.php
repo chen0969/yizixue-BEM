@@ -74,85 +74,48 @@
     </div>
 
     <!-- Footer-->
-    <footer class="py-5 bg-dark footer">
-        <!-- <div class="row text-center text-white"> -->
-        <div class="left">
+    <footer class="l-footer row">
+        <div class="l-footer_brand col-4">
             <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
             <p class="copyright">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19</p>
             <p>統一編號：83453577</p>
         </div>
-        <div class="right">
-            <!-- <div class="row"> -->
-            <div class="topic">
-                <h6>加入 | 易子學</h6>
+        <div class="l-footer_siteMap col-8">
+            <div class="l-footer_siteMap_topic">
+                <h6>加入｜易子學</h6>
                 <div>
                     <a href="{{route('login')}}">登入｜註冊</a>
                     <a href="">聯絡我們</a>
                 </div>
             </div>
-            <div class="topic">
-                <h6>關於 | 會員</h6>
+            <div class="l-footer_siteMap_topic">
+                <h6>關於｜會員</h6>
                 <div>
                     <a href="{{route('senior')}}">找學長姐</a>
                     <a href="{{route('university-list')}}">找學校</a>
                     <a href="{{route('qna')}}">問與答</a>
                 </div>
             </div>
-            <div class="topic">
-                <h6>關於 | 學長姐</h6>
+            <div class="l-footer_siteMap_topic">
+                <h6>關於｜學長姐</h6>
                 <div>
                     <a href="{{route('pay-product-list')}}">成為學長姐</a>
                     <a href="">教戰手則</a>
                 </div>
             </div>
-            <div class="topic">
-                <h6>關於 | 易子學</h6>
+            <div class="l-footer_siteMap_topic">
+                <h6>關於｜易子學</h6>
                 <div>
                     <a href="">關於我們</a>
                     <a href="">前輩網</a>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
-        <!-- </div> -->
     </footer>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $(".owl-carousel").owlCarousel({
-            loop: true, // 循環播放
-            margin: 0, // 外距 10px
-            nav: false, // 顯示點點
-            responsive: {
-                0: {
-                    items: 1 // 螢幕大小為 0~600 顯示 1 個項目
-                },
-                600: {
-                    items: 2 // 螢幕大小為 600~1000 顯示 3 個項目
-                },
-                1000: {
-                    items: 4 // 螢幕大小為 1000 以上 顯示 5 個項目
-                },
-                1500: {
-                    items: 4 // 螢幕大小為 1000 以上 顯示 5 個項目
-                }
-            }
-        });
-
-        //broccoli toggle bar function
-        function toggle() {
-            var burger = $("#burger");
-            var togglebar = $("#toggleBar");
-            burger.toggleClass("burgerTurn");
-            togglebar.toggleClass("noShow");
-        }
-
-        // join yzl function
-        function joinYZL(togglebar) {
-            target = $("#joinYZL");
-            target.toggleClass("d-flex flex-column align-items-center");
-        }
-    </script>
     <!-- cards click function -->
     <script>
         function cardClickable(id) {
@@ -166,6 +129,7 @@
     </script>
     <!-- end of cards click function -->
     <script src="{{ asset('js/broccoli-sideBar.js')}}"></script>
+    <script src="{{ asset('js/react-icon.js')}}"></script>
 </body>
 
 </html>

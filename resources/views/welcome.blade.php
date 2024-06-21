@@ -1,15 +1,13 @@
 @extends('layouts.guest')
 @section('content')
-<!-- Header-->
-<div class="innerheader">
-    <div class="headerCard">
-        <div class="banner">
-            <div>
-                <span id="bannerImg" style="background-image: url('{{ asset('uploads/images/banner_p1.jpg') }}') ;"
-                    class="bgImg">&nbsp</span>
-            </div>
+<!-- Header from: public/scss/layout/welcomePage_layout.scss-->
+<div class="l-innerHeader">
+    <div class="l-innerHeader_headerCard">
+        <div class="l-innerHeader_headerCard_banner">
+            <span id="bannerImg"
+                style="background-image: url('{{ asset('uploads/images/banner_p1.jpg') }}') ;">&nbsp;</span>
         </div>
-        <div class="slogan">
+        <div class="l-innerHeader_headerCard_slogan">
             <h1 id="topic" class="fw-bolder text-white mb-2">海外留學，</h1>
             <h1 class="fw-bolder text-white mb-5">先找學長姐罩</h1>
         </div>
@@ -29,62 +27,59 @@
                 <a href="{{route('senior')}}">學長姐 | 快找</a>
             </h3>
             <!-- items -->
-            <div class="owl-carousel owl-theme">
+            <div>
                 @foreach ($Data['Users'] as $key => $user)
-                <div class="item studentC" onclick="cardClickable({{ $user->id }})">
+                <div class="c-studentCard col-4" onclick="cardClickable({{ $user->id }})">
                     <!-- img div -->
-                    <div class="studentImg">
-                        @if(is_null($user->avatar))
-                        <span
-                            style="background-image: url('{{asset('uploads/images/default_avatar.png')}}') ;">&nbsp</span>
-                        @else
-                        <span style="background-image: url('/uploads/{{ $user->avatar }}');">&nbsp</span>
-                        @endif
-                    </div>
+                    @if(is_null($user->avatar))
+                    <span class="c-studentCard_studentImg"
+                        style="background-image: url('{{asset('uploads/images/default_avatar.png')}}') ;">&nbsp;</span>
+                    @else
+                    <span class="c-studentCard_studentImg"
+                        style="background-image: url('/uploads/{{ $user->avatar }}');">&nbsp;</span>
+                    @endif
                     <!-- background -->
-                    <svg viewBox="0 0 330 480">
-                        <path
-                            d="M301.9,2c14.5,0,26.4,11.8,26.4,26.4v306.7c0,14.5-11.8,26.4-26.4,26.4H28.1c-14.5,0-26.4-11.8-26.4-26.4V28.4C1.8,13.8,13.6,2,28.1,2h273.7M301.9,0H28.1C12.5,0-.2,12.7-.2,28.4v306.7c0,15.7,12.7,28.4,28.4,28.4h273.7c15.7,0,28.4-12.7,28.4-28.4V28.4c0-15.7-12.7-28.4-28.4-28.4h0Z" />
-                        <polygon points="330 480 0 480 0 305 330 337.1 330 480" />
+                    <svg class="c-studentCard_bg" viewBox="0 0 330 170">
+                        <polygon class="cls-1" points="329.5 170 0 170 0 0 330 45.1 329.5 170" />
                     </svg>
                     <!-- school img -->
-                    <div class="schoolImg">
-                        <span style="background-image: url('{{asset('university/USA/US1.png')}}') ;">&nbsp</span>
-                    </div>
+                    <span class="c-studentCard_schoolImg"
+                        style="background-image: url('{{asset('university/USA/US1.png')}}') ;">&nbsp;</span>
                     <!-- name card -->
-                    <h4>
+                    <h4 class="c-studentCard_userName">
                         {{ ($user->name) ? \Illuminate\Support\Str::limit($user->name,10): "" }}
                     </h4>
                     <!-- school english -->
-                    <h5>{{ !is_null($user->universityItem) ? $user->universityItem->english_name : '' }}</h5>
+                    <h5 class="c-studentCard_schoolEnglish">
+                        {{ !is_null($user->universityItem) ? $user->universityItem->english_name : '' }}</h5>
                     <!-- school chinese -->
-                    <h6>{{ !is_null($user->universityItem) ? \Illuminate\Support\Str::limit($user->universityItem->chinese_name, 10) : '' }}
+                    <h6 class="c-studentCard_schoolChinese">
+                        {{ !is_null($user->universityItem) ? \Illuminate\Support\Str::limit($user->universityItem->chinese_name, 10) : '' }}
                     </h6>
                     <!-- react icons -->
-                    <div class="react d-flex flex-row justify-content-evenly align-items-center"
-                        onclick="event.stopPropagation(); return false; ">
+                    <div class="c-studentCard_react" onclick="event.stopPropagation(); return false; ">
                         @if(auth()->check())
-                        <i class="fa fa-heart" style="
-                                color:@if($user->likedUser->where('uid', auth()->user()->id)->where('user_id', $user->id)->count() == 1) red @else black @endif
-                                " data-id="{{$user->id}}">
+                        <i class="bi bi-heart" style="
+                                    color:@if($user->likedUser->where('uid', auth()->user()->id)->where('user_id', $user->id)->count() == 1) red @else black @endif
+                                    " data-id="{{$user->id}}">
                             <span class="text-black">{{$user->likedUser->count()}}</span>
                         </i>
-                        <i class="fa fa-bookmark" data-id="{{$user->id}}" style="
-                                color:  @if($user->collectedUser->where('uid', auth()->user()->id)->where('user_id', $user->id)->count() == 1) red @else black @endif
-                                ">
+                        <i class="bi bi-bookmark" data-id="{{$user->id}}" style="
+                                    color:  @if($user->collectedUser->where('uid', auth()->user()->id)->where('user_id', $user->id)->count() == 1) red @else black @endif
+                                    ">
                             <span class="text-black">{{$user->collectedUser->count()}}</span>
                         </i>
                         @else
-                        <i class="fa fa-heart" style="color: black;" data-id="{{$user->id}}">
+                        <i class="bi bi-heart" style="color: black;" data-id="{{$user->id}}">
                             <span class="text-black">{{$user->likedUser->count()}}</span>
                         </i>
-                        <i class="fa fa-bookmark" data-id="{{$user->id}}">
+                        <i class="bi bi-bookmark" data-id="{{$user->id}}">
                             <span class="text-black">{{$user->collectedUser->count()}}</span>
                         </i>
                         @endif
                     </div>
                     <!-- post tag -->
-                    <div class="postTags">
+                    <div class="c-studentCard_postTag">
                         @forelse ($user->postCategory as $count => $cate)
                         @if ($count < 3) <a href="{{route('senior', ['category' => $cate->postCategory->id])}}"
                             class="text-white">
@@ -119,11 +114,14 @@
                 @break
                 @endif
                 <div class="uniCard d-flex flex-column justify-space-between align-items-center">
-                    <div class="uniLogo d-flex justify-content-center" onclick="uniCardClick('{{ $university->slug }}')">
+                    <div class="uniLogo d-flex justify-content-center"
+                        onclick="uniCardClick('{{ $university->slug }}')">
                         <span style="background-image: url('{{asset($university->image_path)}}') ;">&nbsp</span>
                     </div>
-                    <h6 onclick="uniCardClick('{{ $university->slug }}')">{{ \Illuminate\Support\Str::limit($university->chinese_name, 15) }}</h6>
-                    <h4 onclick="uniCardClick('{{ $university->slug }}')">{{ \Illuminate\Support\Str::limit($university->english_name, 25) }}</h4>
+                    <h6 onclick="uniCardClick('{{ $university->slug }}')">
+                        {{ \Illuminate\Support\Str::limit($university->chinese_name, 15) }}</h6>
+                    <h4 onclick="uniCardClick('{{ $university->slug }}')">
+                        {{ \Illuminate\Support\Str::limit($university->english_name, 25) }}</h4>
                     <h5 onclick="uniCardClick('{{ $university->slug }}')">目前有<a
                             href="{{route('senior', ['university' => $university->slug])}}">{{$university->vip->count()}}</a>位在校
                     </h5>

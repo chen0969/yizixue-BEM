@@ -96,16 +96,16 @@ function pic8(){
 
 $(window).scroll(function(){
     let screenRoll = $(window).scrollTop();
-    const bannerHeight = $(".innerheader").height();
+    const bannerHeight = $(".l-innerHeader").height();
     if (screenRoll >= bannerHeight){
-        $(".scrollFunction").css("color", "#000000");
+        $(".l-header_li > a").css("color", "#000000");
         $("#logoImg").attr("src","uploads/images/color_ezl.png");
         $("#mainNav").css("background-color", "white");
     }
     else{
-        $(".scrollFunction").css("color", "#FFFFFF");
+        $(".l-header_li > a").css("color", "#FFFFFF");
         $("#logoImg").attr("src","uploads/images/logo.png");
-        $("#mainNav").css("background-color", "rgba(255, 255, 255, 0)");
+        $("nav#mainNav").css("background-color", "rgba(255, 255, 255, 0)");
     }
 })
 

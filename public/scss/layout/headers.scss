@@ -18,6 +18,11 @@
         align-self: center;
         font-size: var(--text-xl);
         font-weight: 600;
+        a{
+            all: unset;
+            cursor: pointer;
+            color: var(--color-white);
+        }
         &:last-child{
             padding: 0;
         }
@@ -29,6 +34,8 @@
 
 // for welcome(main page) header
 .l-header{
+    z-index: 2;
+    width: 100%;
     @include header_template(fixed, $transprent);
 }
 

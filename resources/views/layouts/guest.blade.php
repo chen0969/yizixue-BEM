@@ -89,47 +89,43 @@
 
 
     <!-- Footer-->
-    <footer class="py-5 bg-dark footer">
-        <!-- <div class="row text-center text-white"> -->
-        <div class="left">
+    <footer class="l-footer row">
+        <div class="l-footer_brand col-4">
             <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
             <p class="copyright">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19</p>
             <p>統一編號：83453577</p>
         </div>
-        <div class="right">
-            <!-- <div class="row"> -->
-            <div class="topic">
-                <h6>加入 | 易子學</h6>
+        <div class="l-footer_siteMap col-8">
+            <div class="l-footer_siteMap_topic">
+                <h6>加入｜易子學</h6>
                 <div>
                     <a href="{{route('login')}}">登入｜註冊</a>
                     <a href="">聯絡我們</a>
                 </div>
             </div>
-            <div class="topic">
-                <h6>關於 | 會員</h6>
+            <div class="l-footer_siteMap_topic">
+                <h6>關於｜會員</h6>
                 <div>
                     <a href="{{route('senior')}}">找學長姐</a>
                     <a href="{{route('university-list')}}">找學校</a>
                     <a href="{{route('qna')}}">問與答</a>
                 </div>
             </div>
-            <div class="topic">
-                <h6>關於 | 學長姐</h6>
+            <div class="l-footer_siteMap_topic">
+                <h6>關於｜學長姐</h6>
                 <div>
                     <a href="{{route('pay-product-list')}}">成為學長姐</a>
                     <a href="">教戰手則</a>
                 </div>
             </div>
-            <div class="topic">
-                <h6>關於 | 易子學</h6>
+            <div class="l-footer_siteMap_topic">
+                <h6>關於｜易子學</h6>
                 <div>
                     <a href="">關於我們</a>
                     <a href="">前輩網</a>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
-        <!-- </div> -->
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

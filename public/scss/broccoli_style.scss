@@ -1,8 +1,16 @@
+// basic setting
 @import 'utility/broccoli_base.scss';
 @import 'utility/broccoli_color';
 @import 'utility/broccoli_mixins';
 @import 'utility/broccoli_utility';
 @import 'utility/broccoli_variables';
+// header & footer
 @import 'layout/headers.scss';
+@import 'layout/footer.scss';
+// layouts
+@import 'layout/seniorPage_layout.scss';
+@import 'layout/welcomePage_layout.scss';
+// components
 @import 'component/breadcrumbs.scss';
 @import 'component/sideNav.scss';
+@import 'component/studentCard.scss';
