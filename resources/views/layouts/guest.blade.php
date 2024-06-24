@@ -16,19 +16,8 @@
     <link href="{{ asset('sb-admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/sbf-style.css') }}" rel="stylesheet" />
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- slick slider cdn -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- end of slick slider cdn -->
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('sb-admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- Swiper link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Broccoli DIY css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('scss_convert/broccoli_style.css') }}">
 </head>
@@ -127,41 +116,39 @@
             </div>
         </div>
     </footer>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- owl function -->
-    <script>
-        $(".owl-carousel").owlCarousel({
-            loop: true, // 循環播放
-            margin: 0, // 外距 10px
-            nav: false, // 顯示點點
-            responsive: {
-                0: {
-                    items: 1 // 螢幕大小為 0~600 顯示 1 個項目
-                },
-                600: {
-                    items: 2 // 螢幕大小為 600~1000 顯示 3 個項目
-                },
-                1000: {
-                    items: 4 // 螢幕大小為 1000 以上 顯示 5 個項目
-                },
-                1500: {
-                    items: 4 // 螢幕大小為 1000 以上 顯示 5 個項目
-                }
-            }
-        });
-    </script>
 
-    <!-- slick slider function -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- slider slider custom-setting -->
+    <!-- Swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- swiper costume -->
     <script>
-        $('.sliderUni.center').slick({
-            centerMode: true,
-            centerPadding: '0rem',
-            slidesToShow: 5,
-            dots: true,
-            arrows: false
+        var swiper = new Swiper(".studentSwiper", {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            loop: true,
+            // autoplay: {
+            //     delay: 2000,
+            // },
+            pagination: {
+                el: ".studentPagi",
+                clickable: true,
+            },
+        });
+
+        var swiper = new Swiper(".schoolSwiper", {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+            pagination: {
+                el: ".schoolPagi",
+                clickable: true,
+            },
         });
     </script>
 
@@ -176,7 +163,7 @@
             location.href = document.location.origin + "/senior?university=" + encodeURIComponent(uni);
         }
     </script>
-    <!-- end of cards click function -->
+    <!-- header and news carousel function -->
     <script src="{{ asset('js/broccoli-header.js')}}"></script>
 </body>
 

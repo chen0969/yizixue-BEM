@@ -4,6 +4,7 @@
     color: var(--color-white);
     display: grid;
     grid-template-columns: repeat(20, 1fr);
+    min-height: 100rem;
     &_selections {
         grid-column: 1/12;
         grid-row: 1/2;

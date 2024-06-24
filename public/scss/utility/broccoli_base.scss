@@ -149,7 +149,8 @@ main {
 }
 
 section {
-  padding: var(--section-spacing-y) var(--section-spacing-x);
+  // padding: var(--section-spacing-y) var(--section-spacing-x);
+  padding: 0;
 }
 
 .container {

@@ -1,0 +1,38 @@
+.o-swiperCustom{
+    div.swiper{
+        width: 80%;
+    }
+    div.swiper.schoolSwiper{
+        width: 80%;
+        background-color: $prime_purple_bright;
+        border-radius: var(--spacing-24);
+        .c-uniCard{
+            transform: scale(0.75);
+        }
+    }
+    // pagnation
+    span.swiper-pagination-bullet, span.swiper-pagination-bullet-active{
+        width: 2rem;
+        height: 1.1rem;
+        border-radius: var(--spacing-12);
+    }
+
+    // normal bullet
+    span.swiper-pagination-bullet{
+        background-color: $prime_purple;
+        opacity: 1;
+    }
+
+    // active bullet{
+    span.swiper-pagination-bullet-active{
+        background-color: $prime_purple_light;
+        opacity: 1;
+    }
+
+    .paginationCustom{
+        position: absolute;
+        text-align: center;
+        transform: translate3d(0, 0, 0);
+        z-index: 10;
+    }
+}

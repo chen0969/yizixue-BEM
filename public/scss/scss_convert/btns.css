@@ -1,0 +1,8 @@
+.o-btn {
+  all: unset;
+  font-size: var(--text-4xl);
+  color: var(--color-white);
+  cursor: pointer;
+  padding: var(--spacing-12);
+  border-radius: var(--spacing-12);
+}/*# sourceMappingURL=btns.css.map */

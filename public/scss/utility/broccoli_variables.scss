@@ -46,6 +46,7 @@ $spacing-map: (160: 24vw, 120: 20vw, 100: 18vw, 88: 17vw, 80: 16vw, 72: 15vw, 64
   --text-sm: 1.4rem;
   --text-xs: 1rem;
   --text-xxs: 0.8rem;
+  --text-xxxs: 0.5rem;
   
   @include media(sm) {
     --text-4xl: 3.6rem;
@@ -59,12 +60,6 @@ $spacing-map: (160: 24vw, 120: 20vw, 100: 18vw, 88: 17vw, 80: 16vw, 72: 15vw, 64
     --text-lg: 1.8rem;
     --text-md: 1.7rem;
   }
-
-  --color-primary: #EA5514;
-  --color-primary-rgb: 242, 109, 51;
-  --color-primary-80: rgba(var(--color-primary-rgb), 0.8);
-  --color-primary-60: rgba(var(--color-primary-rgb), 0.6);
-  --color-primary-20: rgba(var(--color-primary-rgb), 0.2);
 
   --color-secondary: #FF986A;
   --color-bg: white;

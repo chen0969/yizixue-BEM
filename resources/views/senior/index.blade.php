@@ -14,6 +14,7 @@
 <div class="l-seniorPage row">
     <div class="l-seniorPage_sideNav">
         <div class="c-sideNav row">
+            <!-- options -->
             <div class="c-sideNav_selections col">
                 <div class="c-sideNav_selections_locations">
                     <button class="locEnglish" onclick="SideBarSelect(1)">英語系國家</button>
@@ -40,6 +41,7 @@
                     <button><a href="#">職涯創業</a></button>
                 </div>
             </div>
+            <!-- popup selections -->
             <div class="c-sideNav_area col">
                 <svg class="c-sideNav_area_english" viewBox="0 0 250 350">
                     <path
