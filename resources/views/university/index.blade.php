@@ -141,10 +141,8 @@
         @endforelse
     </div>
 </div>
-<div class="pageNav">
-    <div class="d-flex flex-row justify-content-center">
+<div class="c-pagination">
         {{$universities->appends($_GET)->links('vendor.pagination.bootstrap-4')}}
-    </div>
 </div>
 
 @endsection

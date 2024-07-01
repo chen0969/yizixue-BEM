@@ -19,6 +19,8 @@
         "/public/sb-admin/**",
         "/public/scss/component/**",
         "/public/scss/layout/**",
+        "/public/scss/object/**",
         "/public/scss/utility/**",
+        "/public/scss/state/**",
     ]
 }

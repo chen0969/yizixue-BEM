@@ -57,7 +57,7 @@
         }
     }
 
-    hr {
+    hr, &__hr {
         opacity: 1;
         background-color: var(--color-white);
         height: var(--spacing-2);

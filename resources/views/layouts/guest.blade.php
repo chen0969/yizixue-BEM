@@ -78,46 +78,51 @@
 
 
     <!-- Footer-->
-    <footer class="l-footer row">
-        <div class="l-footer_brand col-4">
-            <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
-            <p class="copyright">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19</p>
-            <p>統一編號：83453577</p>
-        </div>
-        <div class="l-footer_siteMap col-8">
-            <div class="l-footer_siteMap_topic">
-                <h6>加入｜易子學</h6>
-                <div>
-                    <a href="{{route('login')}}">登入｜註冊</a>
-                    <a href="">聯絡我們</a>
+    <footer>
+        <div class="l-footer">
+            <div class="row p-5">
+                <div class="l-footer_brand col-4">
+                    <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
+                    <p class="copyright">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19</p>
+                    <p>統一編號：83453577</p>
                 </div>
-            </div>
-            <div class="l-footer_siteMap_topic">
-                <h6>關於｜會員</h6>
-                <div>
-                    <a href="{{route('senior')}}">找學長姐</a>
-                    <a href="{{route('university-list')}}">找學校</a>
-                    <a href="{{route('qna')}}">問與答</a>
-                </div>
-            </div>
-            <div class="l-footer_siteMap_topic">
-                <h6>關於｜學長姐</h6>
-                <div>
-                    <a href="{{route('pay-product-list')}}">成為學長姐</a>
-                    <a href="">教戰手則</a>
-                </div>
-            </div>
-            <div class="l-footer_siteMap_topic">
-                <h6>關於｜易子學</h6>
-                <div>
-                    <a href="">關於我們</a>
-                    <a href="">前輩網</a>
+                <div class="l-footer_siteMap col-8">
+                    <div class="l-footer_siteMap_topic">
+                        <h6>加入｜易子學</h6>
+                        <div>
+                            <a href="{{route('login')}}">登入｜註冊</a>
+                            <a href="">聯絡我們</a>
+                        </div>
+                    </div>
+                    <div class="l-footer_siteMap_topic">
+                        <h6>關於｜會員</h6>
+                        <div>
+                            <a href="{{route('senior')}}">找學長姐</a>
+                            <a href="{{route('university-list')}}">找學校</a>
+                            <a href="{{route('qna')}}">問與答</a>
+                        </div>
+                    </div>
+                    <div class="l-footer_siteMap_topic">
+                        <h6>關於｜學長姐</h6>
+                        <div>
+                            <a href="{{route('pay-product-list')}}">成為學長姐</a>
+                            <a href="">教戰手則</a>
+                        </div>
+                    </div>
+                    <div class="l-footer_siteMap_topic">
+                        <h6>關於｜易子學</h6>
+                        <div>
+                            <a href="">關於我們</a>
+                            <a href="">前輩網</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -129,9 +134,9 @@
             slidesPerView: 5,
             spaceBetween: 30,
             loop: true,
-            // autoplay: {
-            //     delay: 2000,
-            // },
+            autoplay: {
+                delay: 2000,
+            },
             pagination: {
                 el: ".studentPagi",
                 clickable: true,
@@ -141,6 +146,7 @@
         var swiper = new Swiper(".schoolSwiper", {
             slidesPerView: 5,
             spaceBetween: 30,
+            centeredSlides: true,
             loop: true,
             autoplay: {
                 delay: 2000,

@@ -210,7 +210,7 @@
         @endforelse
     </div>
 </div>
-<div class="pageNav">
+<div class="c-pagination">
     {!! $users->links('vendor.pagination.bootstrap-4') !!}
 </div>
 @endsection

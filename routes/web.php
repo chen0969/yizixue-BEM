@@ -24,6 +24,9 @@ Route::get('service-agreement', 'ContractController@serviceAgreement')->name('se
 Route::get('disclaimer', 'ContractController@disclaimer')->name('disclaimer');
 Route::get('subscription-agreement', 'ContractController@subscriptionAgreement')->name('subscription-agreement');
 
+// about us page
+Route::get('about-us', function(){return view('about_us');});
+
 //line login
 Route::get('/line', 'LoginController@pageLine');
 Route::get('/callback/login', 'LoginController@lineLoginCallBack');

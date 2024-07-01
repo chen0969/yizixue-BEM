@@ -17,7 +17,6 @@
     <link href="{{ asset('css/sbf-style.css') }}" rel="stylesheet" />
     <!-- swiper cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom fonts for this template-->
     <!-- broccoli style -->
@@ -32,88 +31,99 @@
         </a>
         <div class="l-header-2_navBar container col-10">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="l-header-2_navItems collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="l-header-2_ul navbar-nav">
-                    <li class="l-header-2_li nav-item"><a class="nav-link text-white" href="{{route('senior')}}">學長姐｜快找</a></li>
-                    <li class="l-header-2_li nav-item"><a class="nav-link text-white" href="{{route('study-abroad')}}">留學誌｜推薦</a></li>
+                    <li class="l-header-2_li nav-item"><a class="nav-link text-white"
+                            href="{{route('senior')}}">學長姐｜快找</a></li>
+                    <li class="l-header-2_li nav-item"><a class="nav-link text-white"
+                            href="{{route('study-abroad')}}">留學誌｜推薦</a></li>
                     @if(auth()->check())
-                        <li class="l-header-2_li nav-item"><a class="nav-link scrollFunction" href="{{route('home')}}">易子學系統</a></li>
-                        <li class="l-header-2_li nav-item">
-                            <a href="{{route('home')}}">
-                                <svg class="l-header-2_thumbNail" viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <pattern id="image" patternUnits="userSpaceOnUse" height="80" width="80">
-                                            @if(!is_null(auth()->user()->avatar))
-                                                <image x="0" y="0" xlink:href="{{asset('uploads/'.auth()->user()->avatar)}}" width="80" height="80"></image>
-                                            @else
-                                                <image x="0" y="0" xlink:href="{{asset('uploads/images/default_avatar.png')}}" width="80" height="80"></image>
-                                            @endif
-                                        </pattern>
-                                    </defs>
-                                    <circle cx="40" cy="40" r="30" fill="url(#image)"/>
-                                </svg>
-                            </a>
-                        </li>
-                    @else
-                        <li class="l-header-2_li nav-item"><a class="nav-link scrollFunction" href="{{route('login')}}">註冊｜登入</a></li>
-                        <li class="l-header-2_li nav-item">
+                    <li class="l-header-2_li nav-item"><a class="nav-link scrollFunction"
+                            href="{{route('home')}}">易子學系統</a></li>
+                    <li class="l-header-2_li nav-item">
+                        <a href="{{route('home')}}">
                             <svg class="l-header-2_thumbNail" viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                                <circle r="30" cx="40" cy="40" fill="#C1C1C1" />
+                                <defs>
+                                    <pattern id="image" patternUnits="userSpaceOnUse" height="80" width="80">
+                                        @if(!is_null(auth()->user()->avatar))
+                                        <image x="0" y="0" xlink:href="{{asset('uploads/'.auth()->user()->avatar)}}"
+                                            width="80" height="80"></image>
+                                        @else
+                                        <image x="0" y="0" xlink:href="{{asset('uploads/images/default_avatar.png')}}"
+                                            width="80" height="80"></image>
+                                        @endif
+                                    </pattern>
+                                </defs>
+                                <circle cx="40" cy="40" r="30" fill="url(#image)" />
                             </svg>
-                        </li>
+                        </a>
+                    </li>
+                    @else
+                    <li class="l-header-2_li nav-item"><a class="nav-link scrollFunction"
+                            href="{{route('login')}}">註冊｜登入</a></li>
+                    <li class="l-header-2_li nav-item">
+                        <svg class="l-header-2_thumbNail" viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <circle r="30" cx="40" cy="40" fill="#C1C1C1" />
+                        </svg>
+                    </li>
                     @endif
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid px-5 adjOnSingleArticle adjOnIntroduction">
+    <div class="container-fluid p-0">
         @yield('content')
     </div>
 
     <!-- Footer-->
-    <footer class="l-footer row">
-        <div class="l-footer_brand col-4">
-            <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
-            <p class="copyright">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19</p>
-            <p>統一編號：83453577</p>
-        </div>
-        <div class="l-footer_siteMap col-8">
-            <div class="l-footer_siteMap_topic">
-                <h6>加入｜易子學</h6>
-                <div>
-                    <a href="{{route('login')}}">登入｜註冊</a>
-                    <a href="">聯絡我們</a>
+    <footer>
+        <div class="l-footer">
+            <div class="row p-5">
+                <div class="l-footer_brand col-4">
+                    <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
+                    <p class="copyright">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19</p>
+                    <p>統一編號：83453577</p>
                 </div>
-            </div>
-            <div class="l-footer_siteMap_topic">
-                <h6>關於｜會員</h6>
-                <div>
-                    <a href="{{route('senior')}}">找學長姐</a>
-                    <a href="{{route('university-list')}}">找學校</a>
-                    <a href="{{route('qna')}}">問與答</a>
-                </div>
-            </div>
-            <div class="l-footer_siteMap_topic">
-                <h6>關於｜學長姐</h6>
-                <div>
-                    <a href="{{route('pay-product-list')}}">成為學長姐</a>
-                    <a href="">教戰手則</a>
-                </div>
-            </div>
-            <div class="l-footer_siteMap_topic">
-                <h6>關於｜易子學</h6>
-                <div>
-                    <a href="">關於我們</a>
-                    <a href="">前輩網</a>
+                <div class="l-footer_siteMap col-8">
+                    <div class="l-footer_siteMap_topic">
+                        <h6>加入｜易子學</h6>
+                        <div>
+                            <a href="{{route('login')}}">登入｜註冊</a>
+                            <a href="">聯絡我們</a>
+                        </div>
+                    </div>
+                    <div class="l-footer_siteMap_topic">
+                        <h6>關於｜會員</h6>
+                        <div>
+                            <a href="{{route('senior')}}">找學長姐</a>
+                            <a href="{{route('university-list')}}">找學校</a>
+                            <a href="{{route('qna')}}">問與答</a>
+                        </div>
+                    </div>
+                    <div class="l-footer_siteMap_topic">
+                        <h6>關於｜學長姐</h6>
+                        <div>
+                            <a href="{{route('pay-product-list')}}">成為學長姐</a>
+                            <a href="">教戰手則</a>
+                        </div>
+                    </div>
+                    <div class="l-footer_siteMap_topic">
+                        <h6>關於｜易子學</h6>
+                        <div>
+                            <a href="">關於我們</a>
+                            <a href="">前輩網</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- cards click function -->
@@ -126,6 +136,32 @@
         function uniCardClick(uni) {
             location.href = document.location.origin + "/senior?university=" + encodeURIComponent(uni);
         }
+    </script>
+    <!-- swiper custom -->
+    <script>
+        var swiper = new Swiper(".studentSwiper", {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+            pagination: {
+                el: ".studentPagi",
+                clickable: true,
+            },
+        });
+
+        var swiper = new Swiper(".aboutUsSwiper", {
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+            pagination: {
+                el: ".aboutUsPagi",
+                clickable: true,
+            },
+        });
     </script>
     <!-- end of cards click function -->
     <script src="{{ asset('js/broccoli-sideBar.js')}}"></script>

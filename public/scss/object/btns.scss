@@ -12,6 +12,46 @@
     }
 }
 
+.o-lightBtn{
+    all: unset;
+    font-size: var(--text-md);
+    color: var(--color-white);
+    cursor: pointer;
+    padding: var(--spacing-12);
+    border-radius: var(--spacing-12);
+    border: solid var(--spacing-2) var(--color-white);
+    background-color: $prime_purple_light;
+    font-weight: 900;
+    box-shadow: var(--spacing-4) var(--spacing-4) var(--spacing-4) gray;
+    &:hover{
+        color: var(--color-white);
+    }
+}
+
+.o-whiteBtn{
+    all: unset;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    padding: var(--spacing-8);
+    margin: var(--spacing-24);
+    font-size: var(--text-lg);
+    border: var(--spacing-2) solid $prime_purple; 
+    border-radius: var(--spacing-32);
+    background-color: var(--color-white);
+}
+
+.o-skillBtn{
+    all: unset;
+    display: block;
+    cursor: pointer;
+    font-size: var(--text-sm);
+    text-align: center;
+    color: $prime_purple;
+    border-radius: var(--spacing-4);
+    border: solid var(--spacing-2) $prime_purple;
+}
+
 .o-tag{
     @include tag;
 }
@@ -22,4 +62,42 @@
     text-align: end;
     font-size: var(--text-lg);
     color: $prime_purple;
+}
+
+.o-react{
+    font-size: var(--text-md);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    i{
+        display: flex;
+        flex-direction: row;
+        padding: 0 var(--spacing-8) 0 var(--spacing-8);
+        span{
+            all: unset;
+            font-size: var(--text-sm);
+            text-decoration: none;
+            text-transform: none;
+        }
+    }
+}
+
+.o-socialIcon{
+    font-size: var(--text-2xl);
+    width: var(--text-2xl);
+    aspect-ratio: 1/1;
+}
+
+.o-reference{
+    all: unset;
+    cursor: pointer;
+    display: block;
+    width: var(--spacing-80);
+    aspect-ratio: 1/1;
+}
+
+.o-subTitle{
+    font-size: var(--text-2xl);
+    color: $prime_purple;
+    font-weight: 800;
 }
