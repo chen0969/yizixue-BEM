@@ -26,77 +26,79 @@
             <a href="{{route('senior')}}">學長姐 | 快找</a>
         </h3>
         <!-- items -->
-        <div class="l-innerbody__content o-swiperCustom">
+        <div class="l-innerbody__content s-swiperCustom">
             <div class="swiper studentSwiper">
                 <div class="swiper-wrapper">
                     @foreach ($Data['Users'] as $key => $user)
-                    <div class="c-studentCardSwiper swiper-slide" onclick="cardClickable({{ $user->id }})">
-                        <!-- img div -->
-                        @if(is_null($user->avatar))
-                        <span class="c-studentCardSwiper_studentImg"
-                            style="background-image: url('{{asset('uploads/images/default_avatar.png')}}') ;">&nbsp;</span>
-                        @else
-                        <span class="c-studentCardSwiper_studentImg"
-                            style="background-image: url('/uploads/{{ $user->avatar }}');">&nbsp;</span>
-                        @endif
-                        <!-- background -->
-                        <svg class="c-studentCardSwiper_bg" viewBox="0 0 330 170">
-                            <polygon class="cls-1" points="329.5 170 0 170 0 0 330 45.1 329.5 170" />
-                        </svg>
-                        <!-- school img -->
-                        <span class="c-studentCardSwiper_schoolImg"
-                            style="background-image: url('{{asset('university/USA/US1.png')}}') ;">&nbsp;</span>
-                        <!-- name card -->
-                        <h4 class="c-studentCardSwiper_userName">
-                            {{ ($user->name) ? \Illuminate\Support\Str::limit($user->name,10): "" }}
-                        </h4>
-                        <!-- school english -->
-                        <h5 class="c-studentCardSwiper_schoolEnglish">
-                            {{ !is_null($user->universityItem) ? \Illuminate\Support\Str::limit($user->universityItem->english_name, 15) : '' }}
-                        </h5>
-                        <!-- school chinese -->
-                        <h6 class="c-studentCardSwiper_schoolChinese">
-                            {{ !is_null($user->universityItem) ? \Illuminate\Support\Str::limit($user->universityItem->chinese_name, 10) : '' }}
-                        </h6>
-                        <!-- react icons -->
-                        <div class="c-studentCardSwiper_react" onclick="event.stopPropagation(); return false; ">
-                            @if(auth()->check())
-                            <i class="bi bi-heart" style="
+                    <div class="swiper-slide">
+                        <div class="c-studentCardSwiper" onclick="cardClickable({{ $user->id }})">
+                            <!-- img div -->
+                            @if(is_null($user->avatar))
+                            <span class="c-studentCardSwiper_studentImg"
+                                style="background-image: url('{{asset('uploads/images/default_avatar.png')}}') ;">&nbsp;</span>
+                            @else
+                            <span class="c-studentCardSwiper_studentImg"
+                                style="background-image: url('/uploads/{{ $user->avatar }}');">&nbsp;</span>
+                            @endif
+                            <!-- background -->
+                            <svg class="c-studentCardSwiper_bg" viewBox="0 0 330 170">
+                                <polygon class="cls-1" points="329.5 170 0 170 0 0 330 45.1 329.5 170" />
+                            </svg>
+                            <!-- school img -->
+                            <span class="c-studentCardSwiper_schoolImg"
+                                style="background-image: url('{{asset('university/USA/US1.png')}}') ;">&nbsp;</span>
+                            <!-- name card -->
+                            <h4 class="c-studentCardSwiper_userName">
+                                {{ ($user->name) ? \Illuminate\Support\Str::limit($user->name,10): "" }}
+                            </h4>
+                            <!-- school english -->
+                            <h5 class="c-studentCardSwiper_schoolEnglish">
+                                {{ !is_null($user->universityItem) ? \Illuminate\Support\Str::limit($user->universityItem->english_name, 15) : '' }}
+                            </h5>
+                            <!-- school chinese -->
+                            <h6 class="c-studentCardSwiper_schoolChinese">
+                                {{ !is_null($user->universityItem) ? \Illuminate\Support\Str::limit($user->universityItem->chinese_name, 10) : '' }}
+                            </h6>
+                            <!-- react icons -->
+                            <div class="c-studentCardSwiper_react" onclick="event.stopPropagation(); return false; ">
+                                @if(auth()->check())
+                                <i class="bi bi-heart" style="
                                     color:@if($user->likedUser->where('uid', auth()->user()->id)->where('user_id', $user->id)->count() == 1) red @else black @endif
                                     " data-id="{{$user->id}}">
-                                <span class="text-black">{{$user->likedUser->count()}}</span>
-                            </i>
-                            <i class="bi bi-bookmark" data-id="{{$user->id}}" style="
+                                    <span class="text-black">{{$user->likedUser->count()}}</span>
+                                </i>
+                                <i class="bi bi-bookmark" data-id="{{$user->id}}" style="
                                     color:  @if($user->collectedUser->where('uid', auth()->user()->id)->where('user_id', $user->id)->count() == 1) red @else black @endif
                                     ">
-                                <span class="text-black">{{$user->collectedUser->count()}}</span>
-                            </i>
-                            @else
-                            <i class="bi bi-heart" style="color: black;" data-id="{{$user->id}}">
-                                <span class="text-black">{{$user->likedUser->count()}}</span>
-                            </i>
-                            <i class="bi bi-bookmark" data-id="{{$user->id}}">
-                                <span class="text-black">{{$user->collectedUser->count()}}</span>
-                            </i>
-                            @endif
-                        </div>
-                        <!-- post tag -->
-                        <div class="c-studentCardSwiper_postTag">
-                            @forelse ($user->postCategory as $count => $cate)
-                            @if ($count < 3) <a href="{{route('senior', ['category' => $cate->postCategory->id])}}"
-                                class="text-white">
-                                {{ $cate->postCategory->name }}
-                                </a>
+                                    <span class="text-black">{{$user->collectedUser->count()}}</span>
+                                </i>
+                                @else
+                                <i class="bi bi-heart" style="color: black;" data-id="{{$user->id}}">
+                                    <span class="text-black">{{$user->likedUser->count()}}</span>
+                                </i>
+                                <i class="bi bi-bookmark" data-id="{{$user->id}}">
+                                    <span class="text-black">{{$user->collectedUser->count()}}</span>
+                                </i>
                                 @endif
-                                @empty
-                                @endforelse
+                            </div>
+                            <!-- post tag -->
+                            <div class="c-studentCardSwiper_postTag">
+                                @forelse ($user->postCategory as $count => $cate)
+                                @if ($count < 3) <a href="{{route('senior', ['category' => $cate->postCategory->id])}}"
+                                    class="text-white">
+                                    {{ $cate->postCategory->name }}
+                                    </a>
+                                    @endif
+                                    @empty
+                                    @endforelse
+                            </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
                 <div class="studentPagi paginationCustom"></div>
-                <a class="o-readMore" href="/senior">查看更多 &gt;</a>
             </div>
+            <a class="o-readMore" href="/senior">查看更多 &gt;</a>
         </div>
     </section>
 
@@ -107,7 +109,7 @@
             <a href="{{route('university-list')}}">關注 | 學校</a>
         </h3>
         <!-- information -->
-        <div class="l-innerbody__content o-swiperCustom">
+        <div class="l-innerbody__content s-swiperCustom">
             <div class="swiper schoolSwiper">
                 <div class="swiper-wrapper">
                     @php
@@ -118,7 +120,8 @@
                     @if ($count >= 6)
                     @break
                     @endif
-                    <div class="c-uniCard swiper-slide" onclick="uniCardClick('{{ $university->slug }}')">
+                    <div class="swiper-slide">
+                        <div class="c-uniCard" onclick="uniCardClick('{{ $university->slug }}')">
                         <span class="c-uniCard_img"
                             style="background-image: url('{{asset($university->image_path)}}') ;">&nbsp;</span>
                         <h6>{{ \Illuminate\Support\Str::limit($university->chinese_name, 15) }}</h6>
@@ -126,6 +129,7 @@
                         <h5>目前有<a
                                 href="{{route('senior', ['university' => $university->slug])}}">{{$university->vip->count()}}</a>位學長姊
                         </h5>
+                        </div>
                     </div>
                     @php
                     $count++;
@@ -268,7 +272,8 @@
     </section>
 
     <!-- join -->
-    <section class="l-innerbody__join" style="background-image: url('{{asset('uploads/images/join-banner-cut.jpg')}}');">
+    <section class="l-innerbody__join"
+        style="background-image: url('{{asset('uploads/images/join-banner-cut.jpg')}}');">
         <div class="l-innerbody__joinSection">
             <a class="o-btn" href="{{route('login')}}">加入 ｜ 易子學</a>
             <p>讓專業，持續變現</p>

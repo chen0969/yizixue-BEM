@@ -2509,7 +2509,45 @@ section {
 }
 .l-aboutUs__teamSwiper {
   background-color: var(--color-white);
-  margin: var(--spacing-24);
+  margin: var(--spacing-24) var(--spacing-160);
+}
+
+.l-yizixueFAQ {
+  background-color: #C1C1C1;
+  padding-bottom: var(--spacing-80);
+}
+.l-yizixueFAQ__content {
+  background-color: var(--color-white);
+}
+
+.l-contract {
+  background-color: #d7d7d7;
+  padding: var(--spacing-24) var(--spacing-88);
+}
+.l-contract__content {
+  background-color: var(--color-white);
+}
+.l-contract__title {
+  font-size: var(--text-4xl);
+  color: #4C2A70;
+}
+
+.l-login {
+  background-color: #C1C1C1;
+  padding: var(--spacing-120);
+}
+.l-login__box {
+  background-color: var(--color-white);
+  border-radius: var(--spacing-64);
+  padding: var(--spacing-64);
+}
+.l-login__info {
+  font-size: var(--text-lg);
+}
+.l-login .o-btn {
+  font-size: var(--text-md);
+  width: 100%;
+  text-align: center;
 }
 
 .c-breadcrumbs {
@@ -3138,6 +3176,58 @@ section {
   font-weight: 800;
 }
 
+.o-faqTopic {
+  all: unset;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: var(--spacing-4);
+  border: solid var(--color-black) 1px;
+  border-radius: var(--spacing-8);
+  text-align: center;
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+.o-faqTopic:hover {
+  background-color: #4C2A70;
+  color: var(--color-white);
+}
+.o-faqTopic:active {
+  background-color: var(--color-white);
+  color: #BD9EBE;
+}
+.o-faqTopic__selected {
+  background-color: #C1C1C1;
+  color: var(--color-black);
+}
+
+.o-faqBtn {
+  all: unset;
+  display: block;
+  width: 100%;
+}
+.o-faqBtn span {
+  background-color: #BD9EBE;
+  border-radius: var(--spacing-4);
+  border: solid var(--color-black) 1px;
+}
+.o-faqBtn span svg {
+  display: inline;
+  width: var(--text-4xl);
+}
+.o-faqBtn span svg circle {
+  fill: #4C2A70;
+}
+.o-faqBtn span svg path {
+  fill: #BD9EBE;
+}
+.o-faqBtn span p {
+  font-size: var(--text-lg);
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 800;
+}
+
 .o-searchBar {
   overflow: hidden;
   border-radius: var(--spacing-80);
@@ -3170,11 +3260,19 @@ section {
   color: var(--color-white);
 }
 
-.s-swiperCustom div.swiper {
-  width: 80%;
+.o-loginTitle {
+  background-color: #4C2A70;
+  font-size: var(--text-3xl);
+  color: var(--color-white);
+  border-radius: var(--spacing-12);
+  padding: var(--spacing-4);
+}
+
+.s-swiperCustom .swiper {
+  width: 100%;
+  height: 100%;
 }
 .s-swiperCustom div.swiper.schoolSwiper {
-  width: 80%;
   background-color: #e2d8e2;
   border-radius: var(--spacing-24);
 }

@@ -7,3 +7,11 @@
         font-size: var(--text-3xl);
         color: var(--color-white);
 }
+
+.o-loginTitle{
+        background-color: $prime_purple;
+        font-size: var(--text-3xl);
+        color: var(--color-white);
+        border-radius: var(--spacing-12);
+        padding: var(--spacing-4);
+}

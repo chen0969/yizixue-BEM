@@ -100,20 +100,27 @@
                             <a href="{{route('senior')}}">找學長姐</a>
                             <a href="{{route('university-list')}}">找學校</a>
                             <a href="{{route('qna')}}">問與答</a>
+                            <a href="{{route('study-abroad')}}">留學誌</a>
                         </div>
                     </div>
                     <div class="l-footer_siteMap_topic">
                         <h6>關於｜學長姐</h6>
                         <div>
                             <a href="{{route('pay-product-list')}}">成為學長姐</a>
-                            <a href="">教戰手則</a>
+                            <!-- please replace with the real back-end code -->
+                            <a href="/yizixue-faq">教戰手則</a>
+                            <a>學長姐服務條款</a>
                         </div>
                     </div>
                     <div class="l-footer_siteMap_topic">
                         <h6>關於｜易子學</h6>
                         <div>
-                            <a href="">關於我們</a>
+                            <!-- please replace with the real back-end code -->
+                            <a href="/about-us">關於我們</a>
                             <a href="">前輩網</a>
+                            <a>服務條款</a>
+                            <a>隱私權聲明</a>
+                            <a>免責聲明</a>
                         </div>
                     </div>
                 </div>
@@ -131,7 +138,7 @@
     <!-- swiper costume -->
     <script>
         var swiper = new Swiper(".studentSwiper", {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 30,
             loop: true,
             autoplay: {

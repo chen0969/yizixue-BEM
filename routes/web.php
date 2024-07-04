@@ -11,6 +11,12 @@
 |
 */
 
+/* The following are the new pages made by broccoli, please merage the back-end deta into it, thanks */
+// about us page
+Route::get('about-us', function(){return view('about_us');});
+Route::get('yizixue-faq', function(){return view('yizixueFAQ');});
+/* End of new pages */
+
 Route::get('/', 'FrontPageController@index');
 Route::get('introduction/{id}', 'IntroductionController@getDetial')->name('get-introduction');
 Route::get('article-list/{user}', 'ArticleController@getAllArticle')->name('article-list');
@@ -23,9 +29,6 @@ Route::get('membership-agreement', 'ContractController@membershipAgreement')->na
 Route::get('service-agreement', 'ContractController@serviceAgreement')->name('service-agreement');
 Route::get('disclaimer', 'ContractController@disclaimer')->name('disclaimer');
 Route::get('subscription-agreement', 'ContractController@subscriptionAgreement')->name('subscription-agreement');
-
-// about us page
-Route::get('about-us', function(){return view('about_us');});
 
 //line login
 Route::get('/line', 'LoginController@pageLine');

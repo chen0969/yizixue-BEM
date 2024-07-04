@@ -1,9 +1,9 @@
 .s-swiperCustom{
-    div.swiper{
-        width: 80%;
+    .swiper{
+        width: 100%;
+        height: 100%;
     }
     div.swiper.schoolSwiper{
-        width: 80%;
         background-color: $prime_purple_bright;
         border-radius: var(--spacing-24);
         .c-uniCard{

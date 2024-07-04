@@ -8,9 +8,11 @@
         <div class="c-bannerCarousel swiper aboutUsSwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
+                    <!-- put the picture resource here -->
                     <span class="c-bannerCarousel__slide"
                         style="background-image: url('{{asset('uploads/images/aboutUsBanner-1.jpg')}}') ;">&nbsp;</span>
                 </div>
+                <!-- these slides are just DEMOs, you can delete them after back-end setting -->
                 <div class="swiper-slide">
                     <span class="c-bannerCarousel__slide"
                         style="background-image: url('{{asset('uploads/images/aboutUsBanner-2.jpg')}}') ;">&nbsp;</span>
@@ -23,6 +25,7 @@
                     <span class="c-bannerCarousel__slide"
                         style="background-image: url('{{asset('uploads/images/aboutUsBanner-4.jpg')}}') ;">&nbsp;</span>
                 </div>
+                <!-- end of the DEMOs -->
             </div>
             <div class="aboutUsPagi paginationCustom"></div>
         </div>
@@ -37,9 +40,12 @@
                 </div>
                 <div class="col-md-6 p-5">
                     <div class="row l-aboutUs__centerBorder p-5">
+                        <!-- put the picture resource here -->
+                        <img class="col-md-4" src="{{asset('uploads/images/about_sponsor_2.png')}}" alt="">
+                        <!-- these slides are just DEMOs, you can delete them after back-end setting -->
                         <img class="col-md-4" src="{{asset('uploads/images/about_sponsor_2.png')}}" alt="">
                         <img class="col-md-4" src="{{asset('uploads/images/about_sponsor_2.png')}}" alt="">
-                        <img class="col-md-4" src="{{asset('uploads/images/about_sponsor_2.png')}}" alt="">
+                        <!-- end of the DEMOs -->
                     </div>
                 </div>
                 <div class="col-md-3 p-5">
@@ -64,7 +70,7 @@
         <h2 class="o-subTitle w-25">經營團隊</h2>
         <div class="l-aboutUs__teamSwiper">
             <div class="s-swiperCustom">
-                <div class="swiper studentSwiper">
+                <div class="swiper teamSwiper">
                     <div class="swiper-wrapper">
                         <!-- the following card are just a demo, please replace it with the new back-end ver you made, thx ;) -->
                         <div class="swiper-slide">
@@ -317,7 +323,7 @@
                         </div>
                         <!-- end of the demo -->
                     </div>
-                    <div class="studentPagi paginationCustom"></div>
+                    <div class="teamPagi paginationCustom"></div>
                     <a class="o-readMore" href="/senior">查看更多 &gt;</a>
                 </div>
             </div>
@@ -328,7 +334,7 @@
 
 <!-- this is the back-end version of the team swiper card, please replace the code with the demo version upon after you finbished the back-end setting, thx ;) -->
 
-{{--
+<!-- {{--
 
     @foreach ($Data['Users'] as $key => $user)
     <div class="c-studentCardSwiper swiper-slide" onclick="cardClickable({{ $user->id }})">
@@ -386,6 +392,6 @@
 </div>
 @endforeach
 
---}}
+--}} -->
 
 <!-- end of the back end version -->
