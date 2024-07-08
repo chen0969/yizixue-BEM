@@ -148,6 +148,11 @@
                 el: ".studentPagi",
                 clickable: true,
             },
+            breakpoints: {
+                1920:{
+                    slidesPerView: 5,
+                }
+            }
         });
 
         var swiper = new Swiper(".schoolSwiper", {
@@ -162,6 +167,11 @@
                 el: ".schoolPagi",
                 clickable: true,
             },
+            breakpoints: {
+                1920:{
+                    slidesPerView: 7,
+                }
+            }
         });
     </script>
 
