@@ -222,7 +222,7 @@
             <div class="l-introduction__myArticle row">
                 @if(!is_null($Data['user']->post))
                 @foreach($Data['user']->post as $count => $post)
-                @if($count < 4) 
+                @if($count < 4)
                 <div class="col-md-6">
                     <div class="c-articleCard l-introduction__moreArticle">
                         <div class="container">
@@ -444,4 +444,58 @@
         </div>
     </div>
 </div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $(".adjOnIntroduction").removeClass("px-5");
+        $(".adjOnIntroduction").css("padding", "0");
+    });
+    $('.fa-heart').click(function () {
+        let that = $(this);
+        $.ajax({
+            url: "{{url('like-user')}}" + "/" + $(this).data('id'),
+            method: 'GET',
+            success: function (res) {
+                if (res.operator === 'no') {
+                    alert(res.message);
+                } else if (res.operator === 'add') {
+                    that.css('color', 'red');
+                    that.children('span').text(res.total);
+                } else if (res.operator === 'reduce') {
+                    that.css('color', 'black');
+                    that.children('span').text(res.total);
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+    })
+
+    $('.fa-bookmark').click(function () {
+        let that = $(this);
+        $.ajax({
+            url: "{{url('collect-user')}}" + "/" + $(this).data('id'),
+            method: 'GET',
+            success: function (res) {
+                if (res.operator === 'no') {
+                    alert(res.message);
+                } else if (res.operator === 'add') {
+                    that.css('color', 'red');
+                    that.children('span').text(res.total);
+                } else if (res.operator === 'reduce') {
+                    that.css('color', 'black');
+                    that.children('span').text(res.total);
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+
+    })
+</script>
 @endsection

@@ -98,12 +98,12 @@ $(window).scroll(function(){
     let screenRoll = $(window).scrollTop();
     const bannerHeight = $(".l-innerHeader").height();
     if (screenRoll >= bannerHeight){
-        $(".l-header_li > a").css("color", "#000000");
+        $(".l-header__li a").css("color", "#000000");
         $("#logoImg").attr("src","uploads/images/color_ezl.png");
         $("nav#mainNav").css("background-color", "white");
     }
     else{
-        $(".l-header_li > a").css("color", "#FFFFFF");
+        $(".l-header__li a").css("color", "#FFFFFF");
         $("#logoImg").attr("src","uploads/images/logo.png");
         $("nav#mainNav").css("background-color", "rgba(255, 255, 255, 0)");
     }
@@ -144,7 +144,8 @@ function newsSlide(){
         $("#newsTopic").text(posts[currentNews-1].topic);
         // 根據 currentPic 切換圖片
         $(".c-newsCard__bgImg").css("background-image", "url(" + posts[currentNews - 1].image_path + ")");
-        $(".c-newsCard__tags").html("<p>" + posts[currentNews-1].category + "</p>");
+        let string = posts[currentNews-1].category.map(function(item){return `<p class="o-tag">`+item+`</p>`});
+        $(".c-newsCard__tags").html(string);
         $(".c-newsCard__meta").text(posts[currentNews-1].title);
         $(".c-newsCard__brief").text(encodeHTML(posts[currentNews-1].body));
         $(".c-newsCard__readMore").attr('href', posts[currentNews-1].url);
