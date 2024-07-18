@@ -6,6 +6,8 @@
     justify-content: space-between;
     padding: var(--spacing-12);
     background-color: $color;
+    z-index: 10;
+    
 
     &__hidePhone {
         display: none;

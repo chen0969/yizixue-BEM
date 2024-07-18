@@ -118,7 +118,7 @@
                                 <a href="/yizixue-faq">教戰手則</a>
                                 <a>學長姐服務條款</a>
                                 <!-- unsure page, please clearify -->
-                                <a href="/subscription-agreement">註冊條款？</a>
+                                <!-- <a href="/subscription-agreement">註冊條款？</a> -->
                             </div>
                         </div>
                         <div class="l-footer_siteMap_topic">

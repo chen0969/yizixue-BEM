@@ -8,12 +8,12 @@
         <div class="col-md-7">
             <div class="c-breadcrumbs">
                 <div>
-                    <h4 class="c-breadcrumbs_prePage"><a href="{{url('/')}}"
+                    <h4 class="c-breadcrumbs__prePage"><a href="{{url('/')}}"
                             class="text-decoration-none text-black">首頁</a>
                         >
                         留學誌
                     </h4>
-                    <h3 class="c-breadcrumbs_currentPage">留學誌</h3>
+                    <h3 class="c-breadcrumbs__currentPage">留學誌</h3>
                 </div>
             </div>
         </div>
@@ -182,7 +182,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 @empty
                 @endforelse

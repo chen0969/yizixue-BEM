@@ -31,7 +31,7 @@
                 <section class="l-innerbody__student">
                     <!-- title -->
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 p-0">
                             <h3 class="l-innerbody__title">
                                 <a href="{{route('senior')}}">學長姐 | 快找</a>
                             </h3>
@@ -118,7 +118,14 @@
                     </div>
                     <div class="row pr-5">
                         <div class="col-md-12 pr-5">
-                            <a class="o-readMore" href="/senior">查看更多 &gt;</a>
+                            <div class="container-fluid">
+                                <div class="row justify-content-end">
+                                    <div class="col-md-2">
+                                        <a class="o-readMore" href="/senior">查看更多 &gt;</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>
@@ -129,7 +136,7 @@
                     <section class="l-innerbody__university">
                         <!-- title -->
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 p-0">
                                 <h3 class="l-innerbody__title">
                                     <a href="{{route('university-list')}}">關注 | 學校</a>
                                 </h3>
@@ -169,7 +176,14 @@
                                             @endforeach
                                         </div>
                                         <div class="schoolPagi paginationCustom"></div>
-                                        <a class="o-readMore" href="/university-list">查看更多 &gt;</a>
+                                        <div class="container-fluid">
+                                            <div class="row justify-content-end">
+                                                <div class="col-md-2">
+                                                    <a class="o-readMore" href="/university-list">查看更多 &gt;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                 </div>
@@ -184,7 +198,7 @@
                     <section class="l-innerbody__qa">
                         <!-- title -->
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 p-0">
                                 <h3 class="l-innerbody__title">
                                     <a href="{{route('qna')}}">問與答｜諮詢</a>
                                 </h3>
@@ -410,13 +424,20 @@
                 </div>
                 <div class="row pr-5">
                     <div class="col-md-12 pr-5">
-                        <a class="o-readMore" href="#">查看更多 &gt;</a>
+
+                        <div class="container-fluid">
+                            <div class="row justify-content-end">
+                                <div class="col-md-2">
+                                    <a class="o-readMore" href="#">查看更多 &gt;</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 </section>
             </div>
             <!-- join -->
-            <div class="col-md-12">
+            <div class="col-md-12 p-0">
                 <div class="container-fluid p-0 m-0">
                     <div class="row">
                         <div class="col-md-12">
@@ -432,7 +453,7 @@
                 </div>
             </div>
             <!-- news -->
-            <div class="col-md-12">
+            <div class="col-md-12 p-0">
                 <div class="container-fluid p-0 m-0">
                     <section class="l-innerbody__news">
                         <div class="row">

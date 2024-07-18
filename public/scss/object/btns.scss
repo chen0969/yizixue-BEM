@@ -90,6 +90,7 @@
     text-align: end;
     font-size: var(--text-lg);
     color: $prime_purple;
+    z-index: 5;
 }
 
 .o-react{
@@ -120,7 +121,7 @@
     all: unset;
     cursor: pointer;
     display: block;
-    width: var(--spacing-80);
+    width: var(--spacing-120);
     aspect-ratio: 1/1;
 }
 

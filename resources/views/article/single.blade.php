@@ -7,19 +7,19 @@
             <!-- breadcrumb -->
             <div class="c-breadcrumbs">
                 <h4>
-                    <a class="c-breadcrumbs_prePage" href="{{url('/')}}">首頁</a>
+                    <a class="c-breadcrumbs__prePage" href="{{url('/')}}">首頁</a>
                     >
-                    <a class="c-breadcrumbs_prePage"
+                    <a class="c-breadcrumbs__prePage"
                         href="{{route('study-abroad', ['category_id' => $Data['article']->category->first()->postCategory->id])}}">
                         {{$Data['article']->category->first()->postCategory->name}}
                     </a>
                     >
-                    <a class="c-breadcrumbs_prePage"
+                    <a class="c-breadcrumbs__prePage"
                         href="{{route('study-abroad', ['category_id' => $Data['article']->category->first()->postCategory->id])}}">
                         {{$Data['article']->title}}
                     </a>
                 </h4>
-                <h3 class="c-breadcrumbs_currentPage">{{$Data['article']->title}}</h3>
+                <h3 class="c-breadcrumbs__currentPage">{{$Data['article']->title}}</h3>
             </div>
             <!-- post content -->
             <div class="container">

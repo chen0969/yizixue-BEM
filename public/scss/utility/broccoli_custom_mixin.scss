@@ -23,6 +23,7 @@
 // student card setting
 
 @mixin studentCardSetting( $cardBorder, $studentImgBorder, $userNameFont, $SchoolEFont, $schoolCFont, $reactFont, $postFont){
+    cursor: pointer;
     border: $cardBorder;
     border-radius: var(--spacing-24) var(--spacing-24) 0 0;
     padding: 0;

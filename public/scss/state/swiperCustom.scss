@@ -23,6 +23,7 @@
         width: 2rem;
         height: 1.1rem;
         border-radius: var(--spacing-12);
+        z-index: 99;
     }
 
     // normal bullet
@@ -41,7 +42,10 @@
         position: absolute;
         text-align: center;
         transform: translate3d(0, 0, 0);
-        z-index: 10;
+        z-index: 1;
+        .o-readMore{
+            width: fit-content;
+        }
     }
 }
 

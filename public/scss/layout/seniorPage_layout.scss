@@ -20,7 +20,7 @@
 .l-seniorPage{
     @include sideBar_flex_ver;
     .c-studentCard_schoolEnglish{
-        font-size: var(--text-lg);
+        font-size: var(--text-md);
     }
     hr{
         height: var(--spacing-2);

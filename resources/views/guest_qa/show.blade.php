@@ -6,7 +6,7 @@
     <div class="c-breadcrumbs">
         <div class="row">
             <div class="col-sm-12">
-                <h4 class="c-breadcrumbs_prePage">
+                <h4 class="c-breadcrumbs__prePage">
                     <a href="{{url('/')}}" class="text-decoration-none text-black">首頁</a>
                     > 問與答
                     <a> > {{$qna->title}}</a>
@@ -260,6 +260,7 @@
         @foreach($sameqna as $qa)
         <div class="col-md-9">
             <div class="container-fluid">
+                <!-- qna card -->
                 <div class="c-qnaCard">
                     <div class="row">
                         <div class="col-md-11 p-5">

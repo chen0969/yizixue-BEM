@@ -6,12 +6,12 @@
     <div class="c-breadcrumbs">
         <div class="row">
             <div class="col-sm-12">
-                <h4 class="c-breadcrumbs_prePage"><a href="{{url('/')}}" class="text-decoration-none text-black">首頁</a>
+                <h4 class="c-breadcrumbs__prePage"><a href="{{url('/')}}" class="text-decoration-none text-black">首頁</a>
                     > 學長姊
                 </h4>
             </div>
             <div class="col-sm-12">
-                <h3 class="c-breadcrumbs_currentPage">學長姊快找</h3>
+                <h3 class="c-breadcrumbs__currentPage">學長姊快找</h3>
             </div>
         </div>
     </div>

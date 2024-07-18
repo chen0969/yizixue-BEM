@@ -36,7 +36,7 @@
                 <ul class="navbar-nav justify-content-end">
                     <li class="l-header-2__li"><a href="{{route('senior')}}">學長姐｜快找</a>
                     </li>
-                    <li class="l-header-2__li"><a                             href="{{route('study-abroad')}}">留學誌｜推薦</a></li>
+                    <li class="l-header-2__li"><a href="{{route('study-abroad')}}">留學誌｜推薦</a></li>
                     @if(auth()->check())
                     <li class="l-header-2__li"><a href="{{route('home')}}">易子學系統</a>
                     </li>
@@ -116,19 +116,19 @@
         </div>
         <!-- nav items -->
         <div class="l-header-2__navItems collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="l-header-2__links">
-                        <a href="{{route('senior')}}">學長姐｜快找</a>
-                    </div>
-                    <div class="l-header-2__links">
-                        <a href="{{route('study-abroad')}}">留學誌｜推薦</a>
-                    </div>
-                    <div class="l-header-2__links">
-                        @if(auth()->check())
-                        <a href="{{route('home')}}">易子學系統</a>
-                        @else
-                        <a href="{{route('login')}}">註冊｜登入</a>
-                        @endif
-                    </div>
+            <div class="l-header-2__links">
+                <a href="{{route('senior')}}">學長姐｜快找</a>
+            </div>
+            <div class="l-header-2__links">
+                <a href="{{route('study-abroad')}}">留學誌｜推薦</a>
+            </div>
+            <div class="l-header-2__links">
+                @if(auth()->check())
+                <a href="{{route('home')}}">易子學系統</a>
+                @else
+                <a href="{{route('login')}}">註冊｜登入</a>
+                @endif
+            </div>
         </div>
     </nav>
 
@@ -144,8 +144,7 @@
                     <div class="l-footer_brand h-100">
                         <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
                         <div class="row g-3">
-                            <p class="col-md-12 text-center">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19
-                            </p>
+                        <p class="col-md-12 text-center">@2022行家在線有限公司. All Right Reservec. | Powered by Match 19</p>
                             <p class="col-md-12 text-center">統一編號：83453577</p>
                         </div>
                     </div>
@@ -176,7 +175,7 @@
                                 <a href="/yizixue-faq">教戰手則</a>
                                 <a>學長姐服務條款</a>
                                 <!-- unsure page, please clearify -->
-                                <a href="/subscription-agreement">註冊條款？</a>
+                                <!-- <a href="/subscription-agreement">註冊條款？</a> -->
                             </div>
                         </div>
                         <div class="l-footer_siteMap_topic">
@@ -218,7 +217,7 @@
 <!-- swiper custom -->
 <script>
     var swiper = new Swiper(".studentSwiper", {
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 30,
         loop: true,
         autoplay: {
@@ -228,6 +227,11 @@
             el: ".studentPagi",
             clickable: true,
         },
+        breakpoints: {
+            1920: {
+                slidesPerView: 6,
+            }
+        }
     });
 
     var swiper = new Swiper(".aboutUsSwiper", {
