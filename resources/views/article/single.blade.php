@@ -16,7 +16,7 @@
                     >
                     <a class="c-breadcrumbs__prePage"
                         href="{{route('study-abroad', ['category_id' => $Data['article']->category->first()->postCategory->id])}}">
-                        {{$Data['article']->title}}
+                        {{ !is_null($Data['article']->title) ? \Illuminate\Support\Str::limit($Data['article']->title, 15) : '' }}
                     </a>
                 </h4>
                 <h3 class="c-breadcrumbs__currentPage">{{$Data['article']->title}}</h3>
@@ -24,7 +24,9 @@
             <!-- post content -->
             <div class="container">
                 <div class="row">
+                    <!-- main article -->
                     <div class="col-md-9">
+                        <!-- article -->
                         <div class="l-singleArticle__contentDiv">
                             <!-- p date -->
                             <p class="text-right">發布日期{{$Data['article']->created_at->format('Y/m/d')}}</p>
@@ -52,27 +54,27 @@
                                 <div class="col-md-3">
                                     <div class="o-react">
                                         @if(auth()->check())
-                                        <i class="bi bi-heart"
+                                        <i class="bi bi-heart u-cursor-pointer"
                                             style="color:@if(auth()->user()->likePost->where('post_id', $Data['article']->id)->count() == 1) red @else black @endif ;margin:5px"
                                             data-id="{{$Data['article']->id}}">
                                             <span>{{$Data['article']->likePost->count()}}</span>
                                         </i>
-                                        <i class="bi bi-bookmark"
+                                        <i class="bi bi-bookmark u-cursor-pointer"
                                             style="color: @if(auth()->user()->collectPost->where('post_id', $Data['article']->id)->count() == 1) red @else black @endif ;margin:5px"
                                             data-id="{{$Data['article']->id}}">
                                             <span>{{$Data['article']->collectPost->count()}}</span>
                                         </i>
                                         @else
-                                        <i class="bi bi-heart" style=" color:black; margin:5px"
+                                        <i class="bi bi-heart u-cursor-pointer" style=" color:black; margin:5px"
                                             data-id="{{$Data['article']->id}}">
                                             <span>{{$Data['article']->likePost->count()}}</span>
                                         </i>
-                                        <i class="bi bi-bookmark" style=" color:black; margin:5px"
+                                        <i class="bi bi-bookmark u-cursor-pointer" style=" color:black; margin:5px"
                                             data-id="{{$Data['article']->id}}">
                                             <span>{{$Data['article']->collectPost->count()}}</span>
                                         </i>
                                         @endif
-                                        <i class="bi bi-share" style=" color:black; margin:5px"></i>
+                                        <i class="bi bi-share u-cursor-pointer" style=" color:black; margin:5px"></i>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +98,7 @@
                                     style="background-image: url('{{asset('university/USA/US1.png')}}') ;">&nbsp;</span>
                                 <!-- name card -->
                                 <h4 class="c-studentCard_userName">
-                                    {{ $Data['article']->author->name }}
+                                    {{ ($Data['article']->author->name) ? \Illuminate\Support\Str::limit($Data['article']->author->name,8): "" }}
                                 </h4>
                                 <!-- school english -->
                                 <h5 class="c-studentCard_schoolEnglish">
@@ -108,10 +110,10 @@
                                 </h6>
                                 <!-- react icons -->
                                 <div class="c-studentCard_react" onclick="event.stopPropagation(); return false; ">
-                                    <i class="bi bi-heart">
+                                    <i class="bi bi-heart u-cursor-pointer">
                                         <span>T</span>
                                     </i>
-                                    <i class="bi bi-bookmark">
+                                    <i class="bi bi-bookmark u-cursor-pointer">
                                         <span>T</span>
                                     </i>
                                 </div>
@@ -128,20 +130,20 @@
                                 </div>
                             </div>
                             <hr>
-                            <h2>作者的熱門文章</h2>
+                            <h2 class="mt-5">作者的熱門文章</h2>
                             <!-- author article -->
                             <div>
                                 @if(!is_null($Data['article']->author->post))
                                 @foreach($Data['article']->author->post as $post)
                                 <a class="l-singleArticle__authorMore" href="{{ route('article', $post->id) }}">
-                                    <div class="row">
-                                        <div class="col-md-2">
+                                    <div class="row mt-5">
+                                        <div class="col-md-3 p-2">
                                             <div class="l-singleArticle__morePic"
                                                 style="background-image: url('{{ asset('uploads'.$post->image_path)  }}') ;">
                                                 &nbsp;
                                             </div>
                                         </div>
-                                        <div class="col-md-10">
+                                        <div class="col-md-9">
                                             <div class="l-singleArticle__moreMeta">
                                                 <h3>
                                                     {{ \Illuminate\Support\Str::limit($post->title, 15, '...') }}
@@ -162,6 +164,7 @@
                 </div>
             </div>
         </div>
+        <!-- more articles -->
         <div class="row">
             <h2 class="l-singleArticle__title">您可能感興趣的文章</h2>
             <div class="container">
@@ -217,23 +220,26 @@
                                             </div>
                                             <!-- title -->
                                             <a class="c-articleCard__title"
-                                                href="{{route('article', $post->id)}}">{{ $post->title }}</a>
+                                                href="{{route('article', $post->id)}}">
+                                                {{ !is_null($post->title) ? \Illuminate\Support\Str::limit($post->title , 15) : '' }}
+                                            </a>
                                             <!-- content -->
-                                            <p class="c-articleCard__content">{!!
-                                                \Illuminate\Support\Str::limit(strip_tags($post->body)) !!}</p>
+                                            <p class="c-articleCard__content">
+                                                {{ !is_null($post->body) ? \Illuminate\Support\Str::limit($post->body , 40) : '' }}
+                                            </p>
                                             <a class="o-readMore" href="{{route('article', $post->id)}}">...閱讀更多</a>
                                             <hr>
                                             <!-- reacts -->
                                             <div class="o-react w-100 p-3">
                                                 @if(auth()->check())
-                                                <i class="bi bi-heart" style="
+                                                <i class="bi bi-heart u-cursor-pointer" style="
                                     color: @if(auth()->user()->likePost->where('post_id', $post->id)->count()==1) red @else black @endif ;
                                     " data-id="{{$post->id}}">
                                                     <span>
                                                         {{$post->likePost->count()}}
                                                     </span>
                                                 </i>
-                                                <i class="bi bi-bookmark" style="
+                                                <i class="bi bi-bookmark u-cursor-pointer" style="
                                     color: @if(auth()->user()->collectPost->where('post_id', $post->id)->count()==1) red @else black @endif ;
                                     " data-id="{{$post->id}}">
                                                     <span>
@@ -241,12 +247,12 @@
                                                     </span>
                                                 </i>
                                                 @else
-                                                <i class="bi bi-heart" style="color: black;" data-id="{{$post->id}}">
+                                                <i class="bi bi-heart u-cursor-pointer" style="color: black;" data-id="{{$post->id}}">
                                                     <span>
                                                         {{$post->likePost->count()}}
                                                     </span>
                                                 </i>
-                                                <i class="bi bi-bookmark" style="color: black;" data-id="{{$post->id}}">
+                                                <i class="bi bi-bookmark u-cursor-pointer" style="color: black;" data-id="{{$post->id}}">
                                                     <span>
                                                         {{$post->collectPost->count()}}
                                                     </span>
@@ -269,53 +275,4 @@
         </div>
     </div>
 
-    <script>
-        // fix container-fluid px-5 padding
-        $(document).ready(function () {
-            $(".adjOnSingleArticle").removeClass("px-5");
-            $(".adjOnSingleArticle").css("padding", "0");
-        });
-        $('.fa-heart').click(function () {
-            let that = $(this);
-            $.ajax({
-                url: "{{url('like-post/')}}" + "/" + $(this).data('id'),
-                method: 'GET',
-                success: function (res) {
-                    if (res.operator === 'no') {
-                        alert(res.message);
-                    } else if (res.operator === 'add') {
-                        that.css('color', 'red');
-                        that.children('span').text(res.total);
-                    } else if (res.operator === 'reduce') {
-                        that.css('color', 'black');
-                        that.children('span').text(res.total);
-                    }
-                },
-                error: function (error) {
-                    console.log(error)
-                }
-            });
-        })
-
-        $('.fa-bookmark').click(function () {
-            let that = $(this);
-            $.ajax({
-                url: "{{url('collect-post/')}}" + "/" + $(this).data('id'),
-                method: 'GET',
-                success: function (res) {
-                    if (res.operator === 'no') {
-                        alert(res.message);
-                    } else if (res.operator === 'add') {
-                        that.removeClass('text-gray').addClass('text-danger');
-                    } else if (res.operator === 'reduce') {
-                        that.removeClass('text-danger').addClass('text-black');
-                    }
-                },
-                error: function (error) {
-                    console.log(error)
-                }
-            });
-
-        })
-    </script>
     @endsection

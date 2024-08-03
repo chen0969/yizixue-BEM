@@ -36,20 +36,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 p-5">
-                    <img src="{{asset('uploads/images/about_sponsor_1.png')}}" alt="">
+                    <img src="{{asset('uploads/images/goals.png')}}" alt="">
                 </div>
                 <div class="col-md-6 p-5">
                     <div class="row l-aboutUs__centerBorder p-5">
                         <!-- put the picture resource here -->
                         <img class="col-md-4" src="{{asset('uploads/images/about_sponsor_2.png')}}" alt="">
-                        <!-- these slides are just DEMOs, you can delete them after back-end setting -->
-                        <img class="col-md-4" src="{{asset('uploads/images/about_sponsor_2.png')}}" alt="">
-                        <img class="col-md-4" src="{{asset('uploads/images/about_sponsor_2.png')}}" alt="">
-                        <!-- end of the DEMOs -->
+                        <img class="col-md-4" src="{{asset('uploads/images/quality-icon.png')}}" alt="">
+                        <img class="col-md-4" src="{{asset('uploads/images/decent-icon.png')}}" alt="">
                     </div>
                 </div>
                 <div class="col-md-3 p-5">
-                    <img src="{{asset('uploads/images/about_sponsor_3.png')}}" alt="">
+                    <img src="{{asset('uploads/images/csr.png')}}" alt="">
                 </div>
             </div>
             <div class="row p-5">
@@ -259,74 +257,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="c-studentCardSwiper">
-                                <!-- img div -->
-                                <span class="c-studentCardSwiper_studentImg"
-                                    style="background-image: url('{{asset('uploads/images/default_avatar.png')}}') ;">&nbsp;</span>
-                                <!-- background -->
-                                <svg class="c-studentCardSwiper_bg" viewBox="0 0 330 170">
-                                    <polygon class="cls-1" points="329.5 170 0 170 0 0 330 45.1 329.5 170" />
-                                </svg>
-                                <!-- school img -->
-                                <span class="c-studentCardSwiper_schoolImg"
-                                    style="background-image: url('{{asset('university/USA/US1.png')}}') ;">&nbsp;</span>
-                                <!-- name card -->
-                                <h4 class="c-studentCardSwiper_userName">The Name</h4>
-                                <!-- school english -->
-                                <h5 class="c-studentCardSwiper_schoolEnglish">The English School</h5>
-                                <!-- school chinese -->
-                                <h6 class="c-studentCardSwiper_schoolChinese">The Chinese School</h6>
-                                <!-- react icons -->
-                                <div class="c-studentCardSwiper_react">
-                                    <i class="bi bi-heart"><span>T</span></i>
-                                    <i class="bi bi-bookmark"><span>T</span></i>
-                                </div>
-                                <!-- post tag -->
-                                <div class="c-studentCardSwiper_postTag">
-                                    <a href="#" class="text-white">Post Tag</a>
-                                    <a href="#" class="text-white">Post Tag</a>
-                                    <a href="#" class="text-white">Post Tag</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="c-studentCardSwiper">
-                                <!-- img div -->
-                                <span class="c-studentCardSwiper_studentImg"
-                                    style="background-image: url('{{asset('uploads/images/default_avatar.png')}}') ;">&nbsp;</span>
-                                <!-- background -->
-                                <svg class="c-studentCardSwiper_bg" viewBox="0 0 330 170">
-                                    <polygon class="cls-1" points="329.5 170 0 170 0 0 330 45.1 329.5 170" />
-                                </svg>
-                                <!-- school img -->
-                                <span class="c-studentCardSwiper_schoolImg"
-                                    style="background-image: url('{{asset('university/USA/US1.png')}}') ;">&nbsp;</span>
-                                <!-- name card -->
-                                <h4 class="c-studentCardSwiper_userName">The Name</h4>
-                                <!-- school english -->
-                                <h5 class="c-studentCardSwiper_schoolEnglish">The English School</h5>
-                                <!-- school chinese -->
-                                <h6 class="c-studentCardSwiper_schoolChinese">The Chinese School</h6>
-                                <!-- react icons -->
-                                <div class="c-studentCardSwiper_react">
-                                    <i class="bi bi-heart"><span>T</span></i>
-                                    <i class="bi bi-bookmark"><span>T</span></i>
-                                </div>
-                                <!-- post tag -->
-                                <div class="c-studentCardSwiper_postTag">
-                                    <a href="#" class="text-white">Post Tag</a>
-                                    <a href="#" class="text-white">Post Tag</a>
-                                    <a href="#" class="text-white">Post Tag</a>
-                                </div>
-                            </div>
-                        </div>
                         <!-- end of the demo -->
                     </div>
-                    <div class="teamPagi paginationCustom"></div>
-                    <a class="o-readMore" href="/senior">查看更多 &gt;</a>
                 </div>
+                <div class="teamPagi paginationCustom"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
+            <!-- read more -->
+            <a class="o-readMore" href="/senior">查看更多 &gt;</a>
         </div>
     </div>
 </div>

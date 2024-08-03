@@ -9,7 +9,6 @@
                 <h4 class="c-breadcrumbs__prePage">
                     <a href="{{url('/')}}" class="text-decoration-none text-black">首頁</a>> 問與答諮詢
                 </h4>
-                <h3 class="c-breadcrumbs__currentPage">問與答諮詢</h3>
             </div>
         </div>
     </div>
@@ -24,7 +23,7 @@
                 <!-- categories -->
                 <div class="c-sideNav__topics">
                     <button><a class="text-white text-center" href="{{route('study-abroad')}}">
-                            全部文章
+                            全部問答
                         </a></button>
                     <hr class="c-sideNav__hr">
                     <!-- demo section, please delete them after you update the backend data -->

@@ -7,11 +7,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <h4 class="c-breadcrumbs__prePage"><a href="{{url('/')}}" class="text-decoration-none text-black">首頁</a>
-                    > 學長姊
+                    > 學長姊快找
                 </h4>
-            </div>
-            <div class="col-sm-12">
-                <h3 class="c-breadcrumbs__currentPage">學長姊快找</h3>
             </div>
         </div>
     </div>
@@ -25,6 +22,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4 p-0">
+                            <!-- side nav -->
                             <div class="l-seniorPage__sideNav">
                                 <div class="c-sideNav">
                                     <!-- options -->
@@ -32,11 +30,11 @@
                                         <div class="row gy-1">
                                             <div class="col-md-12">
                                                 <div class="c-sideNav__locations">
-                                                    <button onclick="SideBarSelect(1)">英語系國家</button>
+                                                    <button id="englishBtn" onclick="SideBarSelect(1)">英語系國家</button>
                                                     <hr>
-                                                    <button onclick="SideBarSelect(2)">歐語系國家</button>
+                                                    <button id="europBtn" onclick="SideBarSelect(2)">歐語系國家</button>
                                                     <hr>
-                                                    <button onclick="SideBarSelect(3)">亞洲國家</button>
+                                                    <button id="asiaBtn" onclick="SideBarSelect(3)">亞洲國家</button>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -236,7 +234,7 @@
                                                     style="background-image: url('{{asset($user->universityItem->image_path)}}') ;">&nbsp;</span>
                                                 <!-- name card -->
                                                 <h4 class="c-studentCard_userName">
-                                                    {{ ($user->name) ? \Illuminate\Support\Str::limit($user->name,10): "" }}
+                                                    {{ ($user->name) ? \Illuminate\Support\Str::limit($user->name,8): "" }}
                                                 </h4>
                                                 <!-- school english -->
                                                 <h5 class="c-studentCard_schoolEnglish">
@@ -393,49 +391,4 @@
         </div>
     </div>
 </div>
-<script>
-    $('.bi-heart').click(function () {
-        let that = $(this);
-        $.ajax({
-            url: "{{url('like-user')}}" + "/" + $(this).data('id'),
-            method: 'GET',
-            success: function (res) {
-                if (res.operator === 'no') {
-                    alert(res.message);
-                } else if (res.operator === 'add') {
-                    that.css('color', 'red');
-                    that.children('span').text(res.total);
-                } else if (res.operator === 'reduce') {
-                    that.css('color', 'black');
-                    that.children('span').text(res.total);
-                }
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
-    });
-
-    $('.bi-bookmark').click(function () {
-        let that = $(this);
-        $.ajax({
-            url: "{{url('collect-user')}}" + "/" + $(this).data('id'),
-            method: 'GET',
-            success: function (res) {
-                if (res.operator === 'no') {
-                    alert(res.message);
-                } else if (res.operator === 'add') {
-                    that.css('color', 'red');
-                    that.children('span').text(res.total);
-                } else if (res.operator === 'reduce') {
-                    that.css('color', 'black');
-                    that.children('span').text(res.total);
-                }
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
-    });
-</script>
 @endsection

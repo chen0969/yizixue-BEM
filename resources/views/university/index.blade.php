@@ -7,11 +7,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <h4 class="c-breadcrumbs__prePage"><a href="{{url('/')}}" class="text-decoration-none text-black">首頁</a>
-                    > 學校
+                    > 好學校關注
                 </h4>
-            </div>
-            <div class="col-sm-12">
-                <h3 class="c-breadcrumbs__currentPage">好學校關注</h3>
             </div>
         </div>
     </div>

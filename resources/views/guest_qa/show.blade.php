@@ -8,7 +8,7 @@
             <div class="col-sm-12">
                 <h4 class="c-breadcrumbs__prePage">
                     <a href="{{url('/')}}" class="text-decoration-none text-black">首頁</a>
-                    > 問與答
+                    > 問與答諮詢
                     <a> > {{$qna->title}}</a>
                 </h4>
             </div>
@@ -26,18 +26,21 @@
                 <!-- date section -->
                 <p class="col-md-12">{{$qna->created_at->format('Y/m/d')}}</p>
                 <!-- The question title -->
-                <h2 class="col-md-10 l-qnaGuest__title">{{$qna->title}}</h2>
+                <h2 class="col-md-10 l-qnaGuest__title">{{ !is_null($qna->title) ? \Illuminate\Support\Str::limit($qna->title, 50) : '' }}</h2>
                 <div class="col-md-2 align-content-end">
-                    <i class="bi bi-bookmark d-flex">
+                    <!-- !!!!!! -->
+                    <!-- please merge the bookmark function here -->
+                    <i class="bi bi-bookmark d-flex u-cursor-pointer">
                         <span class="text-black">T</span>
                     </i>
+                    <!-- !!!!!! -->
                 </div>
             </div>
             <!-- QA tags -->
             <div class="row">
                 @if(!is_null($qna->categoryRelation))
                 @foreach($qna->categoryRelation as $relation)
-                <div class="col-md-2">
+                <div class="col-md-1 p-0">
                     <div class="o-smallBtn">
                         {{$relation->category->name}}
                     </div>
@@ -47,16 +50,18 @@
             </div>
             <!-- details -->
             <div class="row">
-                <div class="col-md-12 mt-3">
-                    <div class="row">
+                <!-- price -->
+                <div class="col-md-12 mt-5">
+                    <div class="row mt-3">
                         <span for="" class="o-qnaBtn col-md-2">金額</span>
                         <p class="align-content-end pt-2 col-md-10 l-qnaGuest__statusContent">
                             {{$qna->amount_down}}-{{$qna->amount_up}}</p>
                         <hr class="mt-3">
                     </div>
                 </div>
-                <div class="col-md-12 mt-3">
-                    <div class="row">
+                <!-- time -->
+                <div class="col-md-12 mt-5">
+                    <div class="row mt-3">
                         <span for="" class="o-qnaBtn col-md-2">時間</span>
                         <p class="align-content-end pt-2 col-md-10 l-qnaGuest__statusContent">
                             {{ Carbon\Carbon::parse($qna->contact_time)->format('Y-m-d H:i:s')}} 至
@@ -65,16 +70,18 @@
                     </div>
 
                 </div>
-                <div class="col-md-12 mt-3">
-                    <div class="row">
+                <!-- location -->
+                <div class="col-md-12 mt-5">
+                    <div class="row mt-3">
                         <span for="" class="o-qnaBtn col-md-2">地點</span>
                         <p class="align-content-end pt-2 col-md-10 l-qnaGuest__statusContent">{{$qna->place}}</p>
                         <hr class="mt-3">
                     </div>
 
                 </div>
-                <div class="col-md-12 mt-3">
-                    <div class="row">
+                <!-- discription -->
+                <div class="col-md-12 mt-5">
+                    <div class="row mt-3">
                         <span for="" class="o-qnaBtn col-md-2">說明</span>
                         <p class="align-content-end pt-5 col-md-10 text-break">
                             {!! $qna->body !!}
@@ -82,8 +89,9 @@
                         <hr class="mt-3">
                     </div>
                 </div>
-                <div class="col-md-12 mt-3">
-                    <div class="row">
+                <!-- reference -->
+                <div class="col-md-12 mt-5">
+                    <div class="row mt-3">
                         <span class="o-qnaBtn col-md-2">參考</span>
                         <!-- attachments -->
                         <div class="attachment">
@@ -290,7 +298,8 @@
                                 </div>
                                 <div class="col-md-2">
                                     <div class="lign-content-end">
-                                        <i class="bi bi-bookmark d-flex">
+                                        <!-- please merge the bookmark function here -->
+                                        <i class="bi bi-bookmark d-flex u-cursor-pointer">
                                             <span class="text-black">T</span>
                                         </i>
                                     </div>
